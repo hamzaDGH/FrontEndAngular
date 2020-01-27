@@ -1,0 +1,117 @@
+<style> 
+.container{
+    width: max-content;
+}
+</style> 
+<div  style="text-align: center;" class="container">
+    <div class="div-table">
+        <div class="div-cell">
+            <div class="caption-content">
+                <div class="row">
+                    <div class="col-sm-12 col-md-10 col-md-offset-1">
+
+                        <div class="form-search dark">
+                            <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+                                <div class="form-title">
+                                    <i class="fa fa-globe"></i>
+                                    <h2>Cherchez votre trajet en un seul click !</h2>
+                                </div>
+
+                                <div class="row row-inputs">
+                                    <div class="container-fluid">
+                                        <div class="col-sm-3">
+                                            <div class="form-group has-icon has-label">
+                                                <label for="formSearchUpLocation">Départ</label>
+                                                <input type="text" name="keywordDepart" class="form-control"
+                                                    id="formSearchUpLocation" placeholder="Airport or Anywhere" ngModel>
+                                                <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group has-icon has-label">
+                                                <label for="formSearchOffLocation">Arrivée</label>
+                                                <input type="text" class="form-control" name="keywordArrive"
+                                                    id="formSearchOffLocation" placeholder="Airport or Anywhere" ngModel>
+                                                <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group has-icon has-label">
+                                                <label for="formSearchUpDate">Date</label>
+                                                <input type="text" name="keywordDate" class="form-control datepicker"
+                                                    id="formSearchUpDate" placeholder="dd/mm/yyyy"
+                                                    data-date-format="DD/MM/YYYY" ngModel>
+                                                <span class="form-control-icon"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row row-submit">
+                                    <div class="container-fluid">
+                                        <div class="inner">
+                                            <button type="submit" id="formSearchSubmit"
+                                                class="btn btn-submit btn-theme pull-right">
+                                                <i class="fa fa-search-plus"></i> Find Car
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div *ngIf="trajets" class="row row-inputs">
+                                <div *ngFor="let t of trajets._embedded.trajets" class="container-fluid">
+                                    <div class="col-sm-3">
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchOffLocation">Départ</label>
+                                            <input type="text" value={{t.lieuDepart}} class="form-control"
+                                                id="formSearchOffLocation" placeholder="Airport or Anywhere" disabled>
+                                            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchOffLocation">Arrivée</label>
+                                            <input type="text" value={{t.lieuArrive}} class="form-control"
+                                                id="formSearchOffLocation" placeholder="Airport or Anywhere" disabled>
+                                            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchOffDate">Date</label>
+                                            <input type="text" value={{t.dateDepart}} class="form-control datepicker"
+                                                id="formSearchOffDate" placeholder="dd/mm/yyyy" disabled>
+                                            <span class="form-control-icon"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="row row-submit">
+                                        <div class="container-fluid">
+                                            <div class="inner">
+                                                <a class="btn btn-success" (click)="onBookTrajet(t)"><i
+                                                        class="fa fa-shopping-cart" aria-hidden="true"></i></a><a
+                                                    class="btn btn-info" (click)="onDetailTrajet(t)"><i
+                                                        class="fa fa-info" aria-hidden="true"></i></a><a
+                                                    class="btn btn-warning" (click)="onEditTrajet(t)"><i
+                                                        class="fa fa-pencil" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="container-fluid">
+                                    <ul *ngIf="pages" class="nav nav-tabs">
+                                        <li [ngClass]="i==currentPage?'active':''"
+                                            *ngFor="let p of pages; let i = index">
+                                            <a (click)="onPageProduct(i)">{{i}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

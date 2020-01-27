@@ -21,12 +21,32 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/ico/apple-touch-icon-144-precomposed.png",
+              "src/assets/ico/favicon.ico"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/plugins/modernizr.custom.js",
+              "src/assets/js/google-button.js",
+              "src/assets/plugins/bootstrap-select/js/bootstrap-select.min.js",
+              "src/assets/plugins/jquery/jquery-1.11.1.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.min.js",
+              "src/assets/plugins/superfish/js/superfish.min.js",
+              "src/assets/plugins/prettyphoto/js/jquery.prettyPhoto.js",
+              "src/assets/plugins/owl-carousel2/owl.carousel.min.js",
+              "src/assets/plugins/jquery.sticky.min.js",
+              "src/assets/plugins/jquery.easing.min.js",
+              "src/assets/plugins/jquery.smoothscroll.min.js",
+              "src/assets/plugins/swiper/js/swiper.jquery.min.js",
+              "src/assets/plugins/datetimepicker/js/moment-with-locales.min.js",
+              "src/assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js",
+              "src/assets/js/theme-ajax-mail.js",
+              "src/assets/js/theme.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -120,6 +140,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "app"
 }

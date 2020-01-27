@@ -1,0 +1,104 @@
+
+<div class="caption">
+    <div class="container">
+        <div class="div-table">
+            <div class="div-cell">
+                <div class="caption-content">
+                    <!-- Search form -->
+                    <div class="form-search light">
+                        <form #f="ngForm" (ngSubmit)="onSaveTrajet(f.value)">
+                            <div class="form-title">
+                                <i class="fa fa-globe"></i>
+                                <h2>Déposer une Offre</h2>
+                            </div>
+
+                            <div class="row row-inputs">
+                                <div class="container-fluid">
+                                    <div class="col-sm-12">
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchUpLocation2">Lieu de Départ</label>
+                                            <input type="text" name="lieuDepart" class="form-control"
+                                                id="formSearchUpLocation2" placeholder="Airport or Anywhere" ngModel>
+                                            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchOffLocation2">Lieu d'arrivé</label>
+                                            <input type="text" name="lieuArrive" class="form-control"
+                                                id="formSearchOffLocation2" placeholder="Airport or Anywhere" ngModel>
+                                            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row row-inputs">
+                                <div class="container-fluid">
+                                    <div class="col-sm-4">
+                                        <div class="form-group has-icon has-label selectpicker-wrapper">
+                                            <label>Villes de passage</label>
+                                            <select name="ville_passag" class="selectpicker input-price"
+                                                data-live-search="true" data-width="100%" data-toggle="tooltip"
+                                                ngModel=1>
+                                                <option value=1>Autoroute</option>
+                                                <option value=2>Tjr en Dev</option>
+                                                <option value=3>Listes de toutes les villes</option>
+                                            </select>
+                                            <span class="form-control-icon"><i class="fa fa-road"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group has-icon has-label selectpicker-wrapper">
+                                            <label for="formSearchOffLocation2">Nombres de Places</label>
+                                            <input type="text" name="nbPlaces" class="form-control"
+                                                id="formSearchOffLocation2" placeholder="Nombre de place" ngModel>
+                                            <span class="form-control-icon"><i class="fa fa-user"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group has-icon has-label selectpicker-wrapper">
+                                            <label for="formSearchOffLocation2">Prix</label>
+                                            <input type="text" name="prix" class="form-control"
+                                                id="formSearchOffLocation2" placeholder="Prix" ngModel>
+                                            <span class="form-control-icon"><i class="fa fa-money"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row row-inputs">
+                                <div class="container-fluid">
+                                    <div class="col-sm-7">
+                                        <div class="form-group has-icon has-label">
+                                            <label for="formSearchOffDate2">Date de Départ</label>
+                                            <input type="text" name="dateDepart" class="form-control datepicker"
+                                                id="formSearchOffDate2" placeholder="dd/mm/yyyy" ngModel>
+                                            <span class="form-control-icon"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group has-icon has-label selectpicker-wrapper">
+                                            <label>Valises</label>
+                                            <input type="text" name="valise" placeholder="Nombre de valises"
+                                                class="form-control" ngModel>
+                                            <span class="form-control-icon"><i class="fa fa-suitcase"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div style="text-align: center;">
+                                        <button type="submit" id="formSearchSubmit2"
+                                            class="btn btn-submit btn-theme ripple-effect">
+                                            <i class="fa fa-plus"></i> Ajouter un Trajet
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

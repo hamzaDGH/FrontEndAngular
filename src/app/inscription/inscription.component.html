@@ -1,0 +1,77 @@
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h3>Welcome</h3>
+            <p>You are 30 seconds away from earning your own money!</p>
+            <input type="submit" (click)="openForm()" value="Login" /><br />
+            <div class="form-popup" id="myForm">
+                <form action="#" class="form-container">
+                    <h1>Login</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" ngModel required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" name="email" placeholder="Enter Password" ngModel required>
+
+                    <button type="submit" class="btn">Login</button>
+                    <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <h3 class="register-heading">Create an Account</h3>
+                <form #f="ngForm" (ngSubmit)="onSaveUser(f.value)">
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="firstName" class="form-control" placeholder="First Name *"
+                                    value="" ngModel/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="lastName" class="form-control" placeholder="Last Name *"
+                                    value="" ngModel/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="username" class="form-control" placeholder="Username *"
+                                    value="" ngModel/>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" placeholder="Password *"
+                                    value="" ngModel/>
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" name="gender" value="male" checked>
+                                <span> Male </span>
+                                <input type="radio" name="gender" value="female">
+                                <span>Female </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Your Email *"
+                                    value="" ngModel/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" minlength="10" maxlength="10" name="tel" class="form-control"
+                                    placeholder="Your Phone *" value="" ngModel/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="address" class="form-control" placeholder="Your Address *"
+                                    value="" ngModel/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="city" class="form-control" placeholder="Enter Your City *"
+                                    value="" ngModel/>
+                            </div>
+                            <input type="submit" class="btnRegister" value="Register" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
